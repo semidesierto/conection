@@ -9,17 +9,6 @@
         <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
         <script type="text/javascript" charset="utf-8">
         
-        //build an accessible representation of the different
-        //network state values
-        var states = {};
-        states[Connection.UNKNOWN] = 'Unknown';
-        states[Connection.ETHERNET] = 'Ethernet';
-        states[Connection.WIFI] = 'Wi-Fi';
-        states[Connection.CELL_2G] = 'Cell 2G';
-        states[Connection.CELL_3G] = 'Cell 3G';
-        states[Connection.CELL_4G] = 'Cell 4G';
-        states[Connection.NONE] = 'No network';
-        
         function onBodyLoad() {
             document.addEventListener("deviceready", onDeviceReady, false);
         }
@@ -45,6 +34,19 @@
         function getConnectionTypeStr() {
             //get the network state
             var networkState = navigator.network.connection.type;
+            
+            
+        //build an accessible representation of the different
+        //network state values
+        var states = {};
+        states[Connection.UNKNOWN] = 'Unknown';
+        states[Connection.ETHERNET] = 'Ethernet';
+        states[Connection.WIFI] = 'Wi-Fi';
+        states[Connection.CELL_2G] = 'Cell 2G';
+        states[Connection.CELL_3G] = 'Cell 3G';
+        states[Connection.CELL_4G] = 'Cell 4G';
+        states[Connection.NONE] = 'No network';
+        
             //return a string representing the current network state
             return states[networkState];
         }
